@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load render_table from django_tables2 %}
+
+
+{% block title %} Products {% endblock %}
+
+{% block content %}
+<form method="get">
+  <div class="bg-light mb-3">
+    <h3 class="mb-3">Filter products</h3>
+    <div class="row">
+      {% for field in filter.form %}
+      <div class="form-group col-sm-4 col-md-3">
+        {{ field.label_tag }}
+        {% render_field field class="form-control" %}
+      </div>
+      {% endfor %}
+    </div>
+    <button type="submit" class="btn btn-primary mb-3 mt-3">
+      <i class="bi bi-search"></i> Filter
+    </button>
+  </div>
+</form>
+
+<div class="bg-light mb-3">
+  <!-- this will render table with a bad styling-->
+  {% render_table filter.qs %}
+</div>
+
+{% endblock %}
+
+
+

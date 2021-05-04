@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load render_table from django_tables2 %}
+
+
+{% block title %} Products {% endblock %}
+
+{% block content %}
+
+<h3 class="mb-3">Table of products</h3>
+
+<div class="bg-light mb-3">
+  {% render_table table %}
+</div>
+
+{% endblock %}
+
+
+
