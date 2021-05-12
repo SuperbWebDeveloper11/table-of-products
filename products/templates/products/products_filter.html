@@ -4,6 +4,15 @@
 
 {% block title %} Products {% endblock %}
 
+{% block css_code %} 
+<style>
+div.scroll {
+  height: 500px;
+  overflow: scroll;
+}
+</style>
+{% endblock %}
+
 {% block content %}
 <form method="get">
   <div class="bg-light mb-3">
@@ -22,7 +31,7 @@
   </div>
 </form>
 
-<div class="bg-light mb-3">
+<div class="bg-light mb-3 scroll">
   <table class="table table-bordered">
     <thead>
       <tr>
